@@ -1,0 +1,90 @@
+html, body {
+  
+  font-family: Bahnschrift, Roboto, Helvetica, sans-serif;
+  color:white;
+  background-color:#202020;
+  text-align: center;
+  cursor:default
+}
+
+#title{
+  font-size:100%;
+  position:fixed;
+  top:0px;
+  left:0px;
+  text-align:center;
+  background-color:#4D97FF;
+  padding:10px;
+  width:100%;
+  margin-bottom:45px;
+}
+
+#view{
+  display: inline-block;
+  padding:0;
+  margin-top: 150px;
+  min-width:100%;
+  font-size: 20px;
+  text-align:center
+}
+
+div.box{
+  display:inline-block;
+  border: 4px solid #282828;
+  padding:10px;
+  border-radius:15px;
+  margin:10px;
+  padding-left:15px
+}
+
+div.placeholder{
+  margin-bottom:150px
+}
+
+div.button{
+  display:inline-block;
+  border-radius:15px;
+  background:#4D97FF;
+  padding:10px;
+  width:60px;
+  height:30px;
+  margin:15px;
+  cursor:pointer;
+  vertical-align:middle;
+  line-height:30px;
+}
+
+div.button:hover{
+  filter: brightness(85%)
+}
+
+div.container{
+  display:inline-block;
+  background:#282828;
+  border-radius:20px;
+  /*box-shadow: 2px 4px 0px black;*/
+}
+
+progress[value] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 70%;
+  height: 32px;
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: #353535;
+  border-radius: 8px;
+  margin:25px
+}
+
+progress[value]::-webkit-progress-value {
+  border-radius:8px;
+  background: #4D97FF
+}
+
+#result{
+  margin:50px;
+}
+
+
