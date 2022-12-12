@@ -1,0 +1,18 @@
+input{
+  margin:10px;
+  border-radius:10px;
+  font-size:20px;
+  padding:5px;
+  text-align:center;
+}
+
+input[type=text]{
+  width:25%}
+
+input[type=number]{
+  width:50px
+}
+
+input:focus{
+  outline:none
+}
