@@ -11,7 +11,7 @@ var valid_name = /^[\w-]{3,20}$/
 
 //functions
 async function get(user,offset){
-  var response = await fetch(`https://api.scratch.mit.edu/users/${user}/followers`)
+  var response = await fetch(`https://api.scratch.mit.edu/users/${user}/followers`,{method: 'GET',withCredentials: true,crossorigin: true,mode: 'no-cors',})
   var data = await response.json()
   console.log(data)
 }
