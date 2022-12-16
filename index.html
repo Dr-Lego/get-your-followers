@@ -5,14 +5,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Get your Scratch followers!</title>
-  <link href="/get-your-followers/css/style.css" rel="stylesheet" type="text/css" />
-  <link href="/get-your-followers/css/inputStyle.css" rel="stylesheet" type="text/css" />
+  <link href="get-your-followers/css/style.css" rel="stylesheet" type="text/css" />
+  <link href="get-your-followers/js/inputStyle.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-  <div id="title">
-    <h1>Download all your followers!</h1>
-  </div>
+  
   <div id="view">
 
     <div class="container">
@@ -29,14 +27,49 @@
         <input type="number" id="offset" value="0">
       </div>
     </div>
-    <div class="button" id="load">load</div>
-    <div id="result">
-      <progress max="100" value="75" id="progress" style="display:none"></progress>
-    </div
+    <div class="button" id="load">load</div><br>
+    <div id="loading" style="display:none">
+      <progress max="100" value="75" id="progress"></progress>
+      <div class="loading">loading...</div>
+    </div>
+
+    <div id="infos">
+      <div class="info">
+        View example project:<br>
+        <a href="https://scratch.mit.edu/projects/773426239/" target="_blank" rel="noopener noreferrer"><img src="https://uploads.scratch.mit.edu/get_image/project/773426239_282x210.png"></a>
+      </div>
+      <div class="info" >
+        <div id="thanks">It took me so long to code, design and finally find a way to publish this site. It would be very nice if you love the project on Scratch, to make the site more popular, or even follow <a class="username" href="https://scratch.mit.edu/users/Dr_Lego">me</a> to make me happy! :D Thank you very much! =)</div>
+        <img src="thank-you.png" width="200px">
+      </div>
+    </div>
+
+    <div id="downloads" style="display:none">
+      <div class="download-option" style="width:300px; height: 250px">
+      <a class="button" id="txt">Download as Scratch list</a>
+      <p>Simply right-click on a Scratch list, choose "import" and then select this ".txt" file. <br>Now you have a list with all of your followers!</p>
+      </div>
+      <div class="download-option" style="width:300px; height: 250px">
+      <a class="button" id="csv">Download as CSV</a>
+      <p>A CSV (comma seperated values) file is useful if you want to use the list in another programming language like Java or Python.</p>
+      </div>
+      <div class="download-option" style="width:300px; height: 250px">
+      <a class="button" id="json">Download as JSON</a>
+      <p>CSV (JavaScript obect notation) is useful for other programming languages as well. It also has the same format as a list/array in most programming languages.</p>
+      </div>
+      <div  class="preview">
+        <h1>Your first 50 followers:</h1>
+        <div id="preview"></div>
+      </div>
+    </div>
+    <div id="title">
+      <h1>Download all your followers!</h1>
+    </div>
+    <div id="footer"> Made by <a class="username"  href="https://scratch.mit.edu/users/Dr_Lego" style="color:#999999">Dr_Lego</a>. Not affiliated with the Scratch team or the Scratch Foundation.</div>
   </div>
 
 
-  <script src="/get-your-followers/js/script.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
