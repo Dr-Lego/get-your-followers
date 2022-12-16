@@ -1,14 +1,15 @@
 html, body {
-  
+  overflow-x: hidden;
   font-family: Bahnschrift, Roboto, Helvetica, sans-serif;
   color:white;
   background-color:#202020;
   text-align: center;
-  cursor:default
+  cursor:default;
+  margin:0;
 }
 
 #title{
-  font-size:100%;
+  font-size:80%;
   position:fixed;
   top:0px;
   left:0px;
@@ -17,15 +18,20 @@ html, body {
   padding:10px;
   width:100%;
   margin-bottom:45px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
 }
 
 #view{
+  position: relative;
   display: inline-block;
   padding:0;
   margin-top: 150px;
   min-width:100%;
+  min-height: 72vh;
   font-size: 20px;
-  text-align:center
+  text-align:center;
+  padding-bottom: 2.5rem;
 }
 
 div.box{
@@ -41,20 +47,23 @@ div.placeholder{
   margin-bottom:150px
 }
 
-div.button{
+.button{
   display:inline-block;
   border-radius:15px;
   background:#4D97FF;
   padding:10px;
-  width:60px;
+  padding-left: 20px;
+  padding-right: 20px;
   height:30px;
   margin:15px;
   cursor:pointer;
   vertical-align:middle;
   line-height:30px;
+  text-decoration: none;
+  color: white;
 }
 
-div.button:hover{
+.button:hover{
   filter: brightness(85%)
 }
 
@@ -62,7 +71,54 @@ div.container{
   display:inline-block;
   background:#282828;
   border-radius:20px;
-  /*box-shadow: 2px 4px 0px black;*/
+  /* box-shadow: 2px 4px 0px black; */
+}
+
+div.download-option{
+  display:inline-block;
+  background:#282828;
+  border-radius:20px;
+  padding:10px;
+  margin: 25px;
+  vertical-align: top;
+}
+
+.info{
+  vertical-align:top;
+  display:inline-block;
+  background:#282828;
+  border-radius:20px;
+  padding:10px;
+  margin: 50px;
+  width: 330px;
+  height:280px;
+  padding-top: 25px;
+  text-align: center;
+}
+
+.preview{
+  display:inline-block;
+  background:#282828;
+  border-radius:20px;
+  padding:25px;
+  margin: 50px;
+  width: 80%;
+  text-align: center;
+  font-size:80%
+}
+
+#thanks{
+  width:270px;
+  display: inline-block;
+}
+
+img{
+  border-radius:15px;
+  margin:15px
+}
+
+div.download-option:hover{
+  box-shadow: 2px 4px 0px black;
 }
 
 progress[value] {
@@ -86,5 +142,49 @@ progress[value]::-webkit-progress-value {
 #result{
   margin:50px;
 }
+
+p{
+  font-size: 90%;
+  margin:15px
+}
+
+div.loading{
+  margin-top: 50px;
+}
+
+#loading{
+  width:100%;
+}
+
+#downloads{
+  margin-top: 55px;
+}
+
+#footer{
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:100%;
+  text-align: center;
+  font-size:75%;
+  height:2.5rem;
+  color:#999999;
+}
+
+a.username{
+  color:white;
+  text-decoration:none;
+}
+
+a.username:hover{
+  text-decoration:underline;
+}
+
+hr{
+  border: 1px solid white;
+  background-color: white;
+}
+
+
 
 
