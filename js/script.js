@@ -40,18 +40,22 @@ async function get(user,offset){
 }
 
 async function getCount(user,pages){
-  try {
     var response = await fetch(`https://scratchdb.lefty.one/v3/user/info/${user}`);
-    var data = await response.text();
-    data = JSON.parse(data);
-    console.log(data)
-    count = data.statistics.followers;
-    if(pages*40 < count){count=pages*40};
-    return(true)
-  } catch (error) {
-    alert("It seems like this user doesn't exist or he has been lost in space...");return(false)
-  }
-  
+    var status = await response.status;
+    if(status == 404){
+      alert("It seems like this user doesn't exist or he has been lost in space...");return(false)
+    }else{
+      var data = await response.text();
+      data = JSON.parse(data);
+      if(Object.hasOwn(data,"statistics")){count = data.statistics.followers;}
+      else{count = 10}
+      console.log(count);
+      if(pages*40 < count){count=pages*40};
+      return(true)
+    }
+    
+    
+
 }
 
 function download(filename, text, element) {
@@ -93,7 +97,7 @@ async function load(user,pages,offset){
   html_container.style.filter = "opacity(0.5)"
   if(await getCount(user,pages))
   {
-  if(Object.keys(recently).includes(user.toLowerCase())){
+  if(Object.keys(recently).includes(user.toLowerCase()) && offset == 0 && pages*40 > count){
     RESULT = recently[user.toLowerCase()]
   }else{
   for (let i = 0; done == false && RESULT.length < pages*40 && canceled == false; i++) {
@@ -105,7 +109,8 @@ async function load(user,pages,offset){
     cancel()
   }else{
   RESULT.reverse();
-  recently[user.toLowerCase()] = RESULT;
+  if(offset == 0 && pages*40 > count){
+  recently[user.toLowerCase()] = RESULT;}
   ready(user)
   }
   }else{console.log("canceled");cancel();html_infos.style.display = "inline-block"}
